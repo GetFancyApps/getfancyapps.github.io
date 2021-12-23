@@ -1,0 +1,60 @@
+google.com, pub-6221615864154997, DIRECT, f08c47fec0942fa0
+facebook.com, 155679435141174, DIRECT, c3e20eee3f780d68
+display.io, 1432, DIRECT
+rubiconproject.com, 19938, RESELLER, 0bfd66d529a55807
+pubmatic.com, 158101, RESELLER, 5d62403b186f2ace
+undertone.com, 3685, RESELLER
+openx.com, 537153564, RESELLER, 6a698e2ec38604c6
+appnexus.com, 2234, RESELLER
+rubiconproject.com, 22412, RESELLER, 0bfd66d529a55807
+advertising.com, 28650, RESELLER
+advertising.com, 28481, RESELLER
+rhythmone.com, 3955616926, RESELLER, a670c89d4a324e47
+video.unrulymedia.com, 3955616926, RESELLER
+loopme.com, 11229, RESELLER, 6c8d5f95897a5a3b
+rubiconproject.com, 20744, RESELLER, 0bfd66d529a55807
+openx.com, 540298543, RESELLER, 6a698e2ec38604c6
+pubmatic.com, 158154, RESELLER, 5d62403b186f2ace
+inmobi.com, b164fef73b06493b92a9fae09941eef4, RESELLER, 83e75a7ae333ca9d
+contextweb.com, 562153, RESELLER, 89ff185a4c4e857c
+sonobi.com, 4980f2fde3, RESELLER, d1a215d9eb5aee9e
+admanmedia.com, 34, RESELLER
+indexexchange.com, 191497, RESELLER
+appnexus.com, 8804, RESELLER, f5ab79cb980f11d1
+improvedigital.com, 1668, RESELLER
+sonobi.com, 7b37f8ccbc, RESELLER, d1a215d9eb5aee9e
+inmobi.com, 3a4f7da341dd490cbb7dde02b126275e, RESELLER, 83e75a7ae333ca9d
+openx.com, 540866936, RESELLER, 6a698e2ec38604c6
+pubmatic.com, 158481, RESELLER, 5d62403b186f2ace
+rhythmone.com, 3948367200, RESELLER, a670c89d4a324e47
+video.unrulymedia.com, 3948367200, RESELLER
+rubiconproject.com, 20854, RESELLER, 0bfd66d529a55807
+cgnl.io, atmvl9s, RESELLER, d9819e7b540bd6e3
+pubmatic.com, 159626, RESELLER, 5d62403b186f2ace
+
+mopub.com, 57d45af1ad5640d29de70b02a4667ec7, DIRECT, 74b46c0ea83967ca
+
+applovin.com, fb6a91c6f9942cfa113bc7ceef4752b3, DIRECT
+adcolony.com, 5d8cbf6671c93a42, RESELLER, 1ad675c9de6b5176
+rubiconproject.com, 16356, RESELLER, 0bfd66d529a55807
+
+sabio.us, 100054, RESELLER, 96ed93aaa9795702
+rubiconproject.com, 16990, RESELLER, 0bfd66d529a55807
+
+adcolony.com, 859462ba32b9870c94e127ddf5244a78, DIRECT, 1ad675c9de6b5176
+
+tapjoy.com, f3d88bb3d53d4c0386aaf1aec17b4843, DIRECT, 29e595b1aeb5904d
+rubiconproject.com, 12286, RESELLER, 0bfd66d529a55807
+webeyemob.com, 70096, RESELLER
+openx.com, 540679900, RESELLER, 6a698e2ec38604c6
+adcolony.com, 801e49d1be83b5f9, RESELLER, 1ad675c9de6b5176
+pubmatic.com, 158060, RESELLER, 5d62403b186f2ace
+video.unrulymedia.com, 123476257, RESELLER
+indexexchange.com, 182257, RESELLER
+appnexus.com, 6849, RESELLER
+rubiconproject.com, 15268, RESELLER
+rhythmone.com, 123476257, RESELLER, a670c89d4a324e47
+pubmatic.com, 160565, RESELLER, 5d62403b186f2ace
+pubmatic.com, 160565, DIRECT, 5d62403b186f2ace
+pangleglobal.com, 9898, DIRECT
+
