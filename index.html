@@ -1,43 +1,145 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <title>Fancy Apps</title>
-
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fancy Clean</title>
     <style>
-        @media (min-width: 960px) {
-            .container {
-                width: 800px;
-                margin: 0 auto;
-            }
+        *{
+            margin: 0;
+            padding: 0;
+            border: 0;
         }
-
-        @media (max-width: 768px) {
-            .container {
-                width: 80%;
-                margin: 0 auto;
-            }
+        a{
+            text-decoration: none;
         }
-
-        @media (max-width: 640px) {
-            .container {
-                width: 100%;
-                margin: 0 auto;
-            }
+        .main-page {
+            min-height: 100vh;
+            background-image: url(./resource/image/bg_fancyclean@2x.jpg);
+            background-position: center 0;
+            background-repeat: no-repeat;
         }
-
-        .container img {
-            width: 100%;
-            height: auto;
+        .main {
+            max-width: 16.8rem;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
         }
-
+        .nav {
+            height: 80px;
+            display: flex;
+            justify-content: space-around;
+            padding-top: 0.4rem;
+            box-sizing: border-box;
+        }
+        .logo-text {
+            font-size: 0.22rem; 
+            font-family: PingFangSC-Semibold, PingFang SC;
+            font-weight: 600;
+            color: #FFFFFF;
+            line-height: 0.2rem;
+            display: flex;
+        }           
+        .nav-item {
+            display: flex;
+            margin-top: 0.04rem;
+            font-size: 0.16rem;
+            font-family: PingFangSC-Semibold, PingFang SC;
+            font-weight: 600;
+        }
+        .nav-item a {
+            color: #FFFFFF;
+        }
+        .nav-item a:hover{
+            cursor: pointer;
+        }
+        .nav-item :nth-child(-n+2){
+            margin-right: 0.24rem;
+        }
+        .main-img {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            flex: 1;
+        }
+        .app-logo {
+            display: inline-block;
+            width: 204px;
+            height:204px;
+            margin-top: 218px;
+        }
+        .app-word {
+            font-family: HelveticaNeue-LightItalic;
+            font-size: .36rem;
+            color: #fff;
+            text-align: center;
+            font-weight: bold;
+            font-style: italic;
+            margin-top: 1.44rem;
+        }
+        .download {
+            display: inline-block;
+            width: 216px;
+            height: 62px;
+            margin-top: 0.4rem;
+        }
+        .download:hover{
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
-
-<div class="container" onclick=location.href="https://play.google.com/store/apps/details?id=fancyclean.boost.antivirus.junkcleaner">
-    <img src="resource/picture/web4.png"/>
-</div>
-
+    <div class="main-page">
+        <div class="main">
+            <div class="nav">
+                <div class="logo-text">Fancy Mobile Apps</div>
+                <div class="nav-item">
+                   <a href="./fancyclean/privacy_policy">PRIVACY POLICY</a>
+                </div>
+            </div>
+            <div class="main-img">
+                <img src="./resource/image/pic_logo_default@2x.png" class="app-logo"/>
+                <p class="app-word">Antivirus, Cleaner & Booster</p>
+                <img src="./resource/image//pic_google_play@2x.png" class="download"/>
+            </div>
+        </div>
+    </div>
+    <script>
+        function proport () {
+            console.log('2')
+            const html = document.querySelector('.main-page')
+            const htmlLogo = document.querySelector('.app-logo')
+            const width = window.innerWidth  //窗口宽度
+            const height = window.innerHeight  //窗口高度
+            if(width>1920||height>1080){
+                html.style.backgroundSize=`cover`
+                if(height>1080){
+                    htmlLogo.style.width = 204*height/1080 +'px'
+                    htmlLogo.style.height = 204*height/1080 +'px'
+                    htmlLogo.style.marginTop = 298*height/1080 - 80 +'px'
+                }
+                else{
+                    htmlLogo.style.width = 204*width/1920 +'px'
+                    htmlLogo.style.height = 204*width/1920 +'px'
+                    htmlLogo.style.marginTop = 298*width/1920 - 80 +'px'
+                }
+            }
+            else{
+                if(width>414){
+                    html.style.backgroundSize = 'auto'
+                }
+                else {
+                    html.style.backgroundSize = 'auto 100%'
+                    htmlLogo.style.width = 204*height/1080+'px'
+                    htmlLogo.style.height = 204*height/1080+'px'
+                    htmlLogo.style.marginTop = 298*height/1080 - 80 +'px'
+                }
+            }
+        }
+        window.addEventListener('load', proport)
+        window.addEventListener('resize', proport)
+    </script>
+    <script src="./resource/js/screenAdaptation.js"></script>
 </body>
 </html>
