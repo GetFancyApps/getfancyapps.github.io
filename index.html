@@ -101,35 +101,37 @@
             <div class="main-img">
                 <img src="./resource/image/pic_logo_default@2x.png" class="app-logo"/>
                 <p class="app-word">Antivirus, Cleaner & Booster</p>
-                <img src="./resource/image//pic_google_play@2x.png" class="download"/>
+                <a href="https://play.google.com/store/apps/details?id=fancyclean.boost.antivirus.junkcleaner">
+                    <img src="./resource/image//pic_google_play@2x.png" class="download"/>
+                </a>
             </div>
         </div>
     </div>
     <script>
         function proport () {
-            console.log('2')
             const html = document.querySelector('.main-page')
             const htmlLogo = document.querySelector('.app-logo')
-            const width = window.innerWidth  //窗口宽度
-            const height = window.innerHeight  //窗口高度
-            if(width>1920||height>1080){
+            const width = window.innerWidth  
+            const height = window.innerHeight
+
+            if (width > 1920 || height > 1080) {
                 html.style.backgroundSize=`cover`
-                if(height>1080){
+                if (height > 1080) {
                     htmlLogo.style.width = 204*height/1080 +'px'
                     htmlLogo.style.height = 204*height/1080 +'px'
                     htmlLogo.style.marginTop = 298*height/1080 - 80 +'px'
-                }
-                else{
+
+                } else {
                     htmlLogo.style.width = 204*width/1920 +'px'
                     htmlLogo.style.height = 204*width/1920 +'px'
                     htmlLogo.style.marginTop = 298*width/1920 - 80 +'px'
                 }
-            }
-            else{
-                if(width>414){
+
+            } else {
+                if (width > 414) {
                     html.style.backgroundSize = 'auto'
-                }
-                else {
+
+                } else {
                     html.style.backgroundSize = 'auto 100%'
                     htmlLogo.style.width = 204*height/1080+'px'
                     htmlLogo.style.height = 204*height/1080+'px'
@@ -139,6 +141,7 @@
         }
         window.addEventListener('load', proport)
         window.addEventListener('resize', proport)
+
     </script>
     <script src="./resource/js/screenAdaptation.js"></script>
 </body>
