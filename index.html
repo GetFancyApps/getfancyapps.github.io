@@ -1,149 +1,469 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fancy Clean</title>
-    <link rel="shortcut icon" href="./resource/image/favicon.ico" type="image/x-icon">
-    <style>
-        *{
-            margin: 0;
-            padding: 0;
-            border: 0;
-        }
-        a{
-            text-decoration: none;
-        }
-        .main-page {
-            min-height: 100vh;
-            background-image: url(./resource/image/bg_fancyclean@2x.jpg);
-            background-position: center 0;
-            background-repeat: no-repeat;
-        }
-        .main {
-            max-width: 16.8rem;
-            margin: 0 auto;
-            display: flex;
-            flex-direction: column;
-        }
-        .nav {
-            height: 80px;
-            display: flex;
-            justify-content: space-around;
-            padding-top: 0.4rem;
-            box-sizing: border-box;
-        }
-        .logo-text {
-            font-size: 0.22rem; 
-            font-family: PingFangSC-Semibold, PingFang SC;
-            font-weight: 600;
-            color: #FFFFFF;
-            line-height: 0.2rem;
-            display: flex;
-        }           
-        .nav-item {
-            display: flex;
-            margin-top: 0.04rem;
-            font-size: 0.16rem;
-            font-family: PingFangSC-Semibold, PingFang SC;
-            font-weight: 600;
-        }
-        .nav-item a {
-            color: #FFFFFF;
-        }
-        .nav-item a:hover{
-            cursor: pointer;
-        }
-        .nav-item :nth-child(-n+2){
-            margin-right: 0.24rem;
-        }
-        .main-img {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            flex: 1;
-        }
-        .app-logo {
-            display: inline-block;
-            width: 204px;
-            height:204px;
-            margin-top: 218px;
-        }
-        .app-word {
-            font-family: HelveticaNeue-LightItalic;
-            font-size: .36rem;
-            color: #fff;
-            text-align: center;
-            font-weight: bold;
-            font-style: italic;
-            margin-top: 1.44rem;
-        }
-        .download {
-            display: inline-block;
-            width: 216px;
-            height: 62px;
-            margin-top: 0.4rem;
-        }
-        .download:hover{
-            cursor: pointer;
-        }
-    </style>
+    <title>Fancy Apps | Professional Android Optimization & Security</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="./assets/style.css">
 </head>
-<body>
-    <div class="main-page">
-        <div class="main">
-            <div class="nav">
-                <div class="logo-text">Fancy Mobile Apps</div>
-                <div class="nav-item">
-                   <a href="./fancyclean/privacy_policy">PRIVACY POLICY</a>
+
+<body class="bg-slate-50 text-slate-900 overflow-x-hidden">
+
+    <!-- Navbar -->
+    <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 py-6">
+        <div class="max-w-7xl mx-auto px-6 sm:px-8">
+            <div class="flex justify-between items-center">
+                <!-- Logo -->
+                <div class="flex items-center gap-2 cursor-pointer" onclick="window.scrollTo(0,0)">
+                    <div class="w-9 h-9 rounded-full flex items-center justify-center text-white shadow-lg">
+                        <img src="./assets/logo.webp" alt="FANCYAPPS">
+                    </div>
+                    <span id="logo-text" class="font-extrabold text-2xl tracking-tighter text-white">
+                        FANCY<span class="text-sky-400 italic">APPS</span>
+                    </span>
+                </div>
+
+                <!-- Desktop Nav -->
+                <div class="hidden md:flex items-center space-x-10">
+                    <a href="#features"
+                        class="nav-link text-sm font-bold text-slate-300 hover:text-white transition-colors">Features</a>
+                    <a href="#products"
+                        class="nav-link text-sm font-bold text-slate-300 hover:text-white transition-colors">Ecosystem</a>
+                    <a href="#privacy"
+                        class="nav-link text-sm font-bold text-slate-300 hover:text-white transition-colors">Privacy</a>
+                    <button class="bg-white text-slate-950 px-6 py-2.5 rounded-full font-bold text-sm glow-button">
+                        Get Started
+                    </button>
+                </div>
+
+                <!-- Mobile Menu Btn -->
+                <div class="md:hidden">
+                    <button id="menu-btn" class="text-white p-2">
+                        <i data-lucide="menu" id="menu-icon"></i>
+                    </button>
                 </div>
             </div>
-            <div class="main-img">
-                <img src="./resource/image/pic_logo_default@4x.png" class="app-logo"/>
-                <p class="app-word">Antivirus, Cleaner & Manager</p>
-                <a href="https://play.google.com/store/apps/details?id=fancyclean.security.battery.phonemaster">
-                    <img src="./resource/image//pic_google_play@4x.png" class="download"/>
-                </a>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu"
+            class="hidden absolute top-full left-0 w-full bg-white shadow-2xl border-t border-slate-100 p-6 flex flex-col gap-4 md:hidden">
+            <a href="#features" class="text-lg font-bold text-slate-800">Features</a>
+            <a href="#products" class="text-lg font-bold text-slate-800">Ecosystem</a>
+            <a href="#privacy" class="text-lg font-bold text-slate-800">Privacy First</a>
+            <button class="w-full bg-sky-600 text-white py-4 rounded-xl font-bold">Download Now</button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative pt-32 pb-24 lg:pt-52 lg:pb-40 premium-gradient overflow-hidden">
+        <!-- Abstract Decoration -->
+        <div class="absolute inset-0 z-0">
+            <div class="absolute top-1/4 -right-20 w-96 h-96 bg-sky-500/10 rounded-full blur-[120px]"></div>
+            <div class="absolute -bottom-20 -left-20 w-[500px] h-[500px] bg-indigo-500/10 rounded-full blur-[140px]">
             </div>
         </div>
-    </div>
-    <script>
-        function proport () {
-            const html = document.querySelector('.main-page')
-            const htmlLogo = document.querySelector('.app-logo')
-            const width = window.innerWidth  
-            const height = window.innerHeight
 
-            if (width > 1920 || height > 1080) {
-                html.style.backgroundSize=`cover`
-                if (height > 1080) {
-                    htmlLogo.style.width = 204*height/1080 +'px'
-                    htmlLogo.style.height = 204*height/1080 +'px'
-                    htmlLogo.style.marginTop = 298*height/1080 - 80 +'px'
+        <div class="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 flex flex-col lg:flex-row items-center gap-16">
+            <div class="lg:w-3/5 text-center lg:text-left">
+                <div
+                    class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/5 border border-white/10 text-sky-400 text-sm font-bold mb-8">
+                    <i data-lucide="award" class="w-4 h-4"></i>
+                    TRUSTED BY MILLIONS GLOBAL USERS
+                </div>
+                <h1 class="text-5xl md:text-7xl font-extrabold text-white leading-[1.1] mb-8 tracking-tight">
+                    Manage your phone <br />
+                    <span class="text-gradient">In One Tap</span>
+                </h1>
+                <p class="text-xl text-slate-400 mb-10 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+                    Clean, secure, and optimize your device with a single touch. Minimalist design. Zero bloatware.
+                    Maximum speed.
+                </p>
 
-                } else {
-                    htmlLogo.style.width = 204*width/1920 +'px'
-                    htmlLogo.style.height = 204*width/1920 +'px'
-                    htmlLogo.style.marginTop = 298*width/1920 - 80 +'px'
-                }
+                <div class="flex flex-col sm:flex-row gap-5 justify-center lg:justify-start">
+                    <a href="https://play.google.com/store/apps/dev?id=5954775020637799716" target="_blank"
+                        rel="noopener noreferrer"
+                        class="flex items-center justify-center gap-3 bg-sky-500 text-white px-10 py-5 rounded-2xl font-bold text-lg hover:bg-sky-400 transition-all shadow-xl shadow-sky-500/20">
+                        <i data-lucide="play" class="w-6 h-6 fill-current"></i>
+                        Google Play
+                    </a>
+                </div>
+            </div>
 
-            } else {
-                if (width > 414) {
-                    html.style.backgroundSize = 'auto'
+            <!-- Device Mockup -->
+            <div class="lg:w-2/5 flex justify-center relative">
+                <div
+                    class="relative w-72 h-[580px] bg-slate-900 rounded-[3.5rem] border-[12px] border-slate-800 shadow-[0_0_80px_rgba(56,189,248,0.15)] overflow-hidden">
+                    <div class="absolute inset-0 bg-slate-950 flex flex-col items-center justify-center px-4">
+                        <div class="relative w-40 h-40 rounded-full overflow-hidden mb-1 flex-shrink-0">
+                            <div id="lottie-hero" class="absolute inset-0 w-full h-full scale-150 origin-center"></div>
+                        </div>
+                        <div class="text-center mb-6">
+                            <p class="text-white/80 text-xs font-bold">Used Space</p>
+                            <p class="text-white text-xs font-black">56.9 GB / 476.4 GB</p>
+                        </div>
+                        <div class="w-full space-y-5">
+                            <div class="grid grid-cols-2 gap-3">
+                                <div class="rounded-2xl overflow-hidden bg-white/5">
+                                    <img src="./assets/preview-left.svg" alt="Estimated Battery"
+                                        class="w-full h-auto block" />
+                                </div>
+                                <div class="rounded-2xl overflow-hidden bg-white/5">
+                                    <img src="./assets/preview-right.svg" alt="Real-Time Current"
+                                        class="w-full h-auto block" />
+                                </div>
+                            </div>
 
-                } else {
-                    html.style.backgroundSize = 'auto 100%'
-                    htmlLogo.style.width = 204*height/1080+'px'
-                    htmlLogo.style.height = 204*height/1080+'px'
-                    htmlLogo.style.marginTop = 298*height/1080 - 80 +'px'
-                }
-            }
-        }
-        window.addEventListener('load', proport)
-        window.addEventListener('resize', proport)
+                            <div class="rounded-2xl overflow-hidden bg-white/5">
+                                <img src="./assets/preview-bottom.svg" alt="Storage Used"
+                                    class="w-full h-auto object-contain" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    </script>
-    <script src="./resource/js/screenAdaptation.js"></script>
+    <!-- Stats -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-6 border-b border-slate-100 pb-16">
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-12">
+                <div class="text-center">
+                    <h3 class="text-4xl font-black text-slate-950 mb-2 tracking-tight">Millions</h3>
+                    <p class="text-slate-500 font-bold text-sm uppercase">Active Installs</p>
+                </div>
+                <div class="text-center">
+                    <h3 class="text-4xl font-black text-slate-950 mb-2 tracking-tight">4.7/5</h3>
+                    <p class="text-slate-500 font-bold text-sm uppercase">User Rating</p>
+                </div>
+                <div class="text-center">
+                    <h3 class="text-4xl font-black text-slate-950 mb-2 tracking-tight">100+</h3>
+                    <p class="text-slate-500 font-bold text-sm uppercase">Regions Supported</p>
+                </div>
+                <div class="text-center">
+                    <h3 class="text-4xl font-black text-slate-950 mb-2 tracking-tight">Zero</h3>
+                    <p class="text-slate-500 font-bold text-sm uppercase">Hidden Costs</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section with Scroll -->
+    <section id="features" class="py-24">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex flex-col lg:flex-row justify-between items-end mb-20 gap-6">
+                <div class="max-w-xl">
+                    <h2 class="text-4xl md:text-5xl font-black text-slate-950 mb-6 tracking-tight leading-[1.1]">Simple
+                        Tools.<br />Complex Engineering.</h2>
+                    <p class="text-lg text-slate-600 mb-6">We don't do flashy animations that drain your battery. We
+                        focus on lightweight algorithms that deliver measurable speed.</p>
+                    <div class="grid grid-cols-2 gap-6 pt-6 border-t border-slate-200">
+                        <div>
+                            <span class="block text-sky-600 font-black text-xl mb-1">0.1s</span>
+                            <span class="text-xs text-slate-500 font-bold uppercase tracking-wider">Response Time</span>
+                        </div>
+                        <div>
+                            <span class="block text-emerald-600 font-black text-xl mb-1">99.9%</span>
+                            <span class="text-xs text-slate-500 font-bold uppercase tracking-wider">Detection
+                                Accuracy</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Scrollable Container with side buttons -->
+            <div class="relative flex items-center gap-4">
+                <button id="scroll-prev"
+                    class="shrink-0 p-4 rounded-full border border-slate-200 hover:bg-slate-100 hover:border-slate-300 transition-all text-slate-600 active:scale-95"
+                    aria-label="Previous">
+                    <i data-lucide="chevron-left" class="w-6 h-6"></i>
+                </button>
+                <div id="features-container"
+                    class="flex-1 min-w-0 flex gap-8 overflow-x-auto hide-scrollbar snap-x snap-mandatory py-4">
+
+                    <!-- Feature 1: Hyper Clean -->
+                    <div class="bento-card p-10 rounded-[2.5rem] snap-center">
+                        <div class="w-14 h-14 bg-sky-50 rounded-2xl flex items-center justify-center text-sky-600 mb-8">
+                            <i data-lucide="zap" class="w-7 h-7"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-4">Hyper Clean</h3>
+                        <p class="text-slate-500 leading-relaxed mb-6">A deep-scanning engine designed to reclaim every
+                            megabyte. It intelligently identifies and purges ghost files, hidden caches, and system-wide
+                            clutter to restore your phone's .</p>
+                        <ul class="space-y-3 text-sm font-semibold text-slate-700">
+                            <li class="flex items-center gap-2"><i data-lucide="check-circle-2"
+                                    class="w-4 h-4 text-sky-500"></i> Deep Cache Analytics</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check-circle-2"
+                                    class="w-4 h-4 text-sky-500"></i> Deep Log Purge</li>
+                        </ul>
+                    </div>
+
+                    <!-- Feature 2: PDF Logic (NEW CONTENT) -->
+                    <div class="bento-card p-10 rounded-[2.5rem] snap-center">
+                        <div class="w-14 h-14 bg-red-50 rounded-2xl flex items-center justify-center text-red-600 mb-8">
+                            <i data-lucide="file-text" class="w-7 h-7"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-4">Native PDF Engine</h3>
+                        <p class="text-slate-500 leading-relaxed mb-6">The only reader you need. Seamlessly view all
+                            document formats and unlock desktop-grade editing tools right on your mobile. Fast,
+                            powerful, and precise.</p>
+                        <ul class="space-y-3 text-sm font-semibold text-slate-700">
+                            <li class="flex items-center gap-2"><i data-lucide="check-circle-2"
+                                    class="w-4 h-4 text-red-500"></i> Universal Format Support</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check-circle-2"
+                                    class="w-4 h-4 text-red-500"></i> Full-Suite PDF Editing</li>
+                        </ul>
+                    </div>
+
+                    <!-- Feature 3: Ironclad Security -->
+                    <div class="bento-card p-10 rounded-[2.5rem] snap-center">
+                        <div
+                            class="w-14 h-14 bg-emerald-50 rounded-2xl flex items-center justify-center text-emerald-600 mb-8">
+                            <i data-lucide="shield-check" class="w-7 h-7"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-4">Ironclad Security</h3>
+                        <p class="text-slate-500 leading-relaxed mb-6">Armed with a professional-grade antivirus engine,
+                            it provides 360° protection against digital threats. From deep malware removal to real-time
+                            intrusion prevention, we keep your data safe and your privacy intact.</p>
+                        <ul class="space-y-3 text-sm font-semibold text-slate-700">
+                            <li class="flex items-center gap-2"><i data-lucide="check-circle-2"
+                                    class="w-4 h-4 text-emerald-500"></i> Pro-Grade Antivirus Engine</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check-circle-2"
+                                    class="w-4 h-4 text-emerald-500"></i> Advanced Malware Defense</li>
+                        </ul>
+                    </div>
+
+                    <!-- Feature 4: Battery Maestro -->
+                    <div class="bento-card p-10 rounded-[2.5rem] snap-center">
+                        <div
+                            class="w-14 h-14 bg-orange-50 rounded-2xl flex items-center justify-center text-orange-600 mb-8">
+                            <i data-lucide="battery-charging" class="w-7 h-7"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-4">Battery Maestro</h3>
+                        <p class="text-slate-500 leading-relaxed mb-6">Master your device's endurance with precision
+                            power analytics. Our proprietary logic monitors every app's energy consumption in real-time,
+                            identifying power drains before they leave you stranded.</p>
+                        <ul class="space-y-3 text-sm font-semibold text-slate-700">
+                            <li class="flex items-center gap-2"><i data-lucide="check-circle-2"
+                                    class="w-4 h-4 text-orange-500"></i> Real-Time Consumption Analytics</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check-circle-2"
+                                    class="w-4 h-4 text-orange-500"></i> Voltage & Health Guard</li>
+                        </ul>
+                    </div>
+
+                    <!-- Feature 5: Device Health -->
+                    <div class="bento-card p-10 rounded-[2.5rem] snap-center">
+                        <div
+                            class="w-14 h-14 bg-indigo-50 rounded-2xl flex items-center justify-center text-indigo-600 mb-8">
+                            <i data-lucide="smartphone" class="w-7 h-7"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-4">Device Health</h3>
+                        <p class="text-slate-500 leading-relaxed mb-6">A comprehensive diagnostic suite designed for
+                            total device wellness. From privacy shielding to network optimization, we ensure every
+                            aspect of your hardware and software is operating at peak integrity.
+
+                        </p>
+                        <ul class="space-y-3 text-sm font-semibold text-slate-700">
+                            <li class="flex items-center gap-2"><i data-lucide="check-circle-2"
+                                    class="w-4 h-4 text-indigo-500"></i> Intelligent Network Monitor</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check-circle-2"
+                                    class="w-4 h-4 text-indigo-500"></i> Privacy & Threat Shield</li>
+                        </ul>
+                    </div>
+
+                </div>
+                <button id="scroll-next"
+                    class="shrink-0 p-4 rounded-full border border-slate-200 hover:bg-slate-100 hover:border-slate-300 transition-all text-slate-600 active:scale-95"
+                    aria-label="Next">
+                    <i data-lucide="chevron-right" class="w-6 h-6"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Privacy First Block -->
+    <section id="privacy" class="py-24 bg-slate-950 text-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div
+                class="bg-gradient-to-br from-slate-900 to-slate-950 border border-white/5 rounded-[3rem] p-10 lg:p-20 flex flex-col lg:flex-row items-center gap-16">
+                <div class="lg:w-1/2">
+                    <h2 class="text-4xl font-black mb-8 leading-tight">Privacy is not <br />an option. It's a right.
+                    </h2>
+                    <ul class="space-y-6">
+                        <li class="flex items-start gap-4">
+                            <div class="w-6 h-6 rounded-full bg-sky-500/20 flex items-center justify-center mt-1">
+                                <i data-lucide="lock" class="w-3.5 h-3.5 text-sky-400"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg">Zero Data Monetization</h4>
+                                <p class="text-slate-400">Your personal data is never for sale. We don't track, we don't
+                                    profile, and we never share with third-party advertisers. Ever.</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-4">
+                            <div class="w-6 h-6 rounded-full bg-sky-500/20 flex items-center justify-center mt-1">
+                                <i data-lucide="eye-off" class="w-3.5 h-3.5 text-sky-400"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg">On-Device Intelligence</h4>
+                                <p class="text-slate-400">All file analysis happens locally on your device. No private
+                                    files ever leave your phone without your explicit consent.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="lg:w-1/2 grid grid-cols-2 gap-4">
+                    <div
+                        class="bg-white/5 p-8 rounded-3xl text-center border border-white/5 hover:bg-white/10 transition-colors">
+                        <i data-lucide="fingerprint" class="w-10 h-10 text-sky-400 mx-auto mb-4"></i>
+                        <span class="font-bold">App Lock</span>
+                    </div>
+                    <div
+                        class="bg-white/5 p-8 rounded-3xl text-center border border-white/5 hover:bg-white/10 transition-colors">
+                        <i data-lucide="globe-2" class="w-10 h-10 text-sky-400 mx-auto mb-4"></i>
+                        <span class="font-bold">Safe Browsing</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Ecosystem -->
+    <section id="products" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-6 text-center mb-16">
+            <h2 class="text-4xl font-black text-slate-950 mb-4 tracking-tight">The Fancy Ecosystem</h2>
+            <p class="text-slate-500 max-w-2xl mx-auto">Discover our full suite of performance-driven utilities. Each
+                app is designed for a specific purpose, ensuring your device stays optimized 24/7.</p>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 lg:gap-12">
+
+            <!-- App 1: PDF Reader -->
+            <a href="https://play.google.com/store/apps/details?id=pdf.reader.editor.office.fancy&pcampaignid=web_share"
+                target="_blank" rel="noopener"
+                class="flex flex-col items-center text-center group hover:opacity-90 transition-opacity">
+                <div class="app-icon-container w-28 h-28 mb-6">
+                    <img src="./assets/pdf.png" alt="PDF Reader">
+                </div>
+                <h4 class="font-bold text-slate-900 mb-1 leading-tight">PDF Reader</h4>
+                <p class="text-xs text-slate-400 mb-2">View & Edit</p>
+                <div class="flex items-center gap-1 text-sm font-bold text-slate-600">
+                    <span>4.5</span>
+                    <i data-lucide="star" class="w-3.5 h-3.5 fill-amber-400 text-amber-400"></i>
+                </div>
+            </a>
+
+            <!-- App 2: Fancy Optimizer -->
+            <a href="https://play.google.com/store/apps/details?id=fancyoptimizer.clean.security.battery.phonemaster&pcampaignid=web_share"
+                target="_blank" rel="noopener"
+                class="flex flex-col items-center text-center group hover:opacity-90 transition-opacity">
+                <div class="app-icon-container w-28 h-28 mb-6">
+                    <img src="./assets/optimizer.png" alt="Fancy Optimizer">
+                </div>
+                <h4 class="font-bold text-slate-900 mb-1 leading-tight">Fancy Optimizer</h4>
+                <p class="text-xs text-slate-400 mb-2">Speed Boost</p>
+                <div class="flex items-center gap-1 text-sm font-bold text-slate-600">
+                    <span>4.5</span>
+                    <i data-lucide="star" class="w-3.5 h-3.5 fill-amber-400 text-amber-400"></i>
+                </div>
+            </a>
+
+            <!-- App 3: Fancy Battery -->
+            <a href="https://play.google.com/store/apps/details?id=fancybattery.clean.security.phonemaster&pcampaignid=web_share"
+                target="_blank" rel="noopener"
+                class="flex flex-col items-center text-center group hover:opacity-90 transition-opacity">
+                <div class="app-icon-container w-28 h-28 mb-6">
+                    <img src="./assets/battery.png" alt="Fancy Battery">
+                </div>
+                <h4 class="font-bold text-slate-900 mb-1 leading-tight">Fancy Battery</h4>
+                <p class="text-xs text-slate-400 mb-2">Power Saver</p>
+                <div class="flex items-center gap-1 text-sm font-bold text-slate-600">
+                    <span>4.6</span>
+                    <i data-lucide="star" class="w-3.5 h-3.5 fill-amber-400 text-amber-400"></i>
+                </div>
+            </a>
+
+            <!-- App 4: Fancy Security -->
+            <a href="https://play.google.com/store/apps/details?id=fancysecurity.clean.battery.phonemaster&pcampaignid=web_share"
+                target="_blank" rel="noopener"
+                class="flex flex-col items-center text-center group hover:opacity-90 transition-opacity">
+                <div class="app-icon-container w-28 h-28 mb-6">
+                    <img src="./assets/security.png" alt="Fancy Security">
+                </div>
+                <h4 class="font-bold text-slate-900 mb-1 leading-tight">Fancy Security</h4>
+                <p class="text-xs text-slate-400 mb-2">Antivirus</p>
+                <div class="flex items-center gap-1 text-sm font-bold text-slate-600">
+                    <span>4.7</span>
+                    <i data-lucide="star" class="w-3.5 h-3.5 fill-amber-400 text-amber-400"></i>
+                </div>
+            </a>
+
+            <!-- App 5: Fancy Cleaner -->
+            <a href="https://play.google.com/store/apps/details?id=fancyclean.security.battery.phonemaster&pcampaignid=web_share"
+                target="_blank" rel="noopener"
+                class="flex flex-col items-center text-center group hover:opacity-90 transition-opacity">
+                <div class="app-icon-container w-28 h-28 mb-6">
+                    <img src="./assets/cleaner.png" alt="Fancy Cleaner">
+                </div>
+                <h4 class="font-bold text-slate-900 mb-1 leading-tight">Fancy Cleaner</h4>
+                <p class="text-xs text-slate-400 mb-2">Junk Removal</p>
+                <div class="flex items-center gap-1 text-sm font-bold text-slate-600">
+                    <span>4.6</span>
+                    <i data-lucide="star" class="w-3.5 h-3.5 fill-amber-400 text-amber-400"></i>
+                </div>
+            </a>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-100 py-20 px-6 border-t border-slate-200">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col lg:flex-row justify-between gap-16 mb-20">
+                <div class="lg:w-1/3">
+                    <div class="flex items-center gap-2 mb-6 text-slate-950">
+                        <img src="./assets/logo.webp" alt="FANCYAPPS" class="w-8 h-8 rounded-lg object-cover">
+                        <span class="font-black text-xl tracking-tighter">FANCYAPPS</span>
+                    </div>
+                    <p class="text-slate-500 mb-8">Building the most reliable mobile utilities for a digital world.
+                        Secure, fast, and user-centric.</p>
+                </div>
+                <div class="lg:w-2/3">
+                    <h5 class="font-bold text-slate-950 mb-6 uppercase text-xs tracking-widest">Products</h5>
+                    <ul class="grid grid-cols-3 gap-4 text-slate-500 text-sm font-bold">
+                        <li><a href="https://play.google.com/store/apps/details?id=pdf.reader.editor.office.fancy&pcampaignid=web_share"
+                                target="_blank" rel="noopener" class="hover:text-sky-600 transition-colors">PDF
+                                Reader</a></li>
+                        <li><a href="https://play.google.com/store/apps/details?id=fancyoptimizer.clean.security.battery.phonemaster&pcampaignid=web_share"
+                                target="_blank" rel="noopener" class="hover:text-sky-600 transition-colors">Fancy
+                                Optimizer</a></li>
+                        <li><a href="https://play.google.com/store/apps/details?id=fancybattery.clean.security.phonemaster&pcampaignid=web_share"
+                                target="_blank" rel="noopener" class="hover:text-sky-600 transition-colors">Fancy
+                                Battery</a></li>
+                        <li><a href="https://play.google.com/store/apps/details?id=fancysecurity.clean.battery.phonemaster&pcampaignid=web_share"
+                                target="_blank" rel="noopener" class="hover:text-sky-600 transition-colors">Fancy
+                                Security</a></li>
+                        <li><a href="https://play.google.com/store/apps/details?id=fancyclean.security.battery.phonemaster&pcampaignid=web_share"
+                                target="_blank" rel="noopener" class="hover:text-sky-600 transition-colors">Fancy
+                                Cleaner</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div
+                class="text-center pt-10 border-t border-slate-200 text-slate-400 text-[10px] font-black uppercase tracking-[0.3em]">
+                &copy;  Fancy Apps International. Performance Without Compromise.
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js"></script>
+    <script src="./assets/main.js"></script>
 </body>
+
 </html>
