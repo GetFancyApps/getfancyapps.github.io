@@ -1,4 +1,4 @@
-# Updated at 2026/01/21 15:43:02
+# Updated at 2026/02/17 16:36:26
 
 # Admob
 google.com,pub-6221615864154997,DIRECT,f08c47fec0942fa0
@@ -1540,3 +1540,6 @@ pubnative.net,1007063,RESELLER,d641df8625486a7b
 pubnative.net,1007563,RESELLER,d641df8625486a7b
 xandr.com,13293,RESELLER,f5ab79cb980f11d1
 zmaticoo.com,5135063,RESELLER
+
+# Facebook
+facebook.com,2403290579831579,DIRECT,c3e20eee3f780d68
